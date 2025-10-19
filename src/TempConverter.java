@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+
 
 public class TempConverter extends JFrame {
     private final JTextField celsius = new JTextField(10);
@@ -37,6 +39,11 @@ public class TempConverter extends JFrame {
         gc.gridx = 0; gc.gridy = 1; form.add(fLabel, gc);
         gc.gridx = 1; gc.gridy = 1; form.add(farenheit, gc);
 
-
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(TempConverter::new);
     }
 }
